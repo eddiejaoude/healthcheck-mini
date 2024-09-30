@@ -2,7 +2,7 @@
 
 import React from "react";
 import { fireEvent, render, screen } from "@testing-library/react";
-import { RepoChecker } from "../repo-checker";
+import { RepoChecker } from "../../../src/components/repo-checker";
 import "@testing-library/jest-dom";
 
 describe("RepoChecker() RepoChecker method", () => {
@@ -49,7 +49,7 @@ describe("RepoChecker() RepoChecker method", () => {
       const input = screen.getByPlaceholderText(
         "https://github.com/username/repo"
       );
-      const button = screen.getByRole("button", { name: /check/i });
+      const button = screen.getByText("Check");
 
       // Simulate typing into the input and submitting the form
       fireEvent.change(input, {
@@ -78,7 +78,7 @@ describe("RepoChecker() RepoChecker method", () => {
       render(<RepoChecker />);
 
       // Get the button element
-      const button = screen.getByRole("button", { name: /check/i });
+      const button = screen.getByText("Check");
 
       // Simulate clicking the button without entering a URL
       fireEvent.click(button);
@@ -97,7 +97,7 @@ describe("RepoChecker() RepoChecker method", () => {
       const input = screen.getByPlaceholderText(
         "https://github.com/username/repo"
       );
-      const button = screen.getByRole("button", { name: /check/i });
+      const button = screen.getByText("Check");
 
       // Simulate entering an invalid URL and submitting the form
       fireEvent.change(input, { target: { value: "invalid-url" } });
