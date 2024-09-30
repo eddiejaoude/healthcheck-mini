@@ -2,11 +2,11 @@
 
 import React from "react";
 import { render } from "@testing-library/react";
-import Home from "../../../src/app/page.tsx";
+import Home from "../../../src/app/page";
 import "@testing-library/jest-dom";
 
 // Mock the RepoChecker component
-jest.mock("@/components/repo-checker", () => ({
+jest.mock("../../../src/components/repo-checker", () => ({
   RepoChecker: () => (
     <div data-testid="repo-checker">RepoChecker Component</div>
   ),
@@ -25,7 +25,7 @@ describe("Home() Home method", () => {
     it("should handle the absence of RepoChecker gracefully", () => {
       // This test simulates the scenario where RepoChecker might not be available.
       // Since RepoChecker is mocked, this test is more illustrative than functional.
-      jest.mock("@/components/repo-checker", () => ({
+      jest.mock("../../../src/components/repo-checker", () => ({
         RepoChecker: () => null,
       }));
 
