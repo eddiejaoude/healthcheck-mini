@@ -18,11 +18,11 @@ export default function Report({
   const StatusIcon = ({ status }: { status: CheckStatus }) => {
     switch (status) {
       case "passed":
-        return <CheckCircle2 className="text-green-500" />;
+        return <CheckCircle2 color="green" />;
       case "failed":
-        return <XCircle className="text-red-500" />;
+        return <XCircle color="red" />;
       case "warning":
-        return <AlertCircle className="text-yellow-500" />;
+        return <AlertCircle color="orange" />;
     }
   };
 
