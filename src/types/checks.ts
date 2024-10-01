@@ -1,4 +1,4 @@
-export type CheckStatus = "success" | "error" | "warning";
+export type CheckStatus = "success" | "error" | "warning" | "unknown";
 
 export interface StatusCheck {
   title: string;

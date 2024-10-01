@@ -1,8 +1,11 @@
+import { StatusCheck } from "@/types/checks";
+
 export default function url(repo) {
-  let response = {
-    id: "url",
-    href: "/repo/status",
+  const response: StatusCheck = {
     title: "Url",
+    status: "unknown",
+    description: "-",
+    extra: "-",
   };
 
   if (repo.homepage) {

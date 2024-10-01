@@ -1,3 +1,4 @@
+import { StatusCheck } from "@/types/checks";
 import activity from "./activity";
 import branches from "./branches";
 import codeOfConduct from "./codeOfConduct";
@@ -18,7 +19,7 @@ import url from "./url";
 export default function checks(data) {
   const allChecks = [
     description(data.repo),
-    // url(data.repo),
+    url(data.repo),
     // topics(data.repo),
     // activity(data.repo),
     // issues(data.repo),
@@ -32,7 +33,6 @@ export default function checks(data) {
     // pullRequestTemplate(data.communityMetrics),
     // codeOfConduct(data.communityMetrics),
     // labels(data.labels),
-    // projects(data.repo, data.projects),
   ];
 
   const summary = checkSummary(allChecks);
@@ -40,18 +40,6 @@ export default function checks(data) {
   return { summary, allChecks };
 }
 
-export function checkSummary(checks) {
+export function checkSummary(checks: StatusCheck[]) {
   return Object.groupBy(checks, ({ status }) => status);
-}
-
-export function worstCheck(
-  check,
-  error = "error",
-  warning = "warning",
-  success = "success"
-) {
-  if (!check) {
-    return "unknow";
-  }
-  return check.red > 0 ? error : check.amber > 0 ? warning : success;
 }

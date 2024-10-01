@@ -6,9 +6,9 @@ export default function description(repo) {
 
   const response: StatusCheck = {
     title: "Description",
-    status: "success",
-    description: "You have a repo description.",
-    extra: "No action required.",
+    status: "unknown",
+    description: "-",
+    extra: "-",
   };
 
   if (repo.description) {
