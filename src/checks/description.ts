@@ -1,6 +1,7 @@
+import { Repo } from "@/models/github/repo";
 import { StatusCheck } from "@/types/checks";
 
-export default function description(repo) {
+export default function description(repo: Repo) {
   const min = 10;
   const max = 200;
 

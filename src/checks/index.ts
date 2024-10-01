@@ -15,8 +15,9 @@ import readme from "./readme";
 import release from "./release";
 import topics from "./topics";
 import url from "./url";
+import Data from "@/models/data";
 
-export default function checks(data) {
+export default function checks(data: Data) {
   const allChecks = [
     description(data.repo),
     url(data.repo),

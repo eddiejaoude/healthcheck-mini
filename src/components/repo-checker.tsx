@@ -14,6 +14,7 @@ import Report from "./report";
 import { StatusCheck } from "@/types/checks";
 import extractOwnerRepo from "@/lib/extractOwnerRepo";
 import checks from "@/checks/index";
+import Data from "@/models/data";
 
 export function RepoChecker() {
   const [repoUrl, setRepoUrl] = useState("");
@@ -23,12 +24,13 @@ export function RepoChecker() {
     e.preventDefault();
 
     // get repo data from github
-    const data = { repo: {} };
     const { owner, repo } = extractOwnerRepo(repoUrl);
     const res = await fetch(`https://api.github.com/repos/${owner}/${repo}`, {
       next: { revalidate: 3600 },
     });
-    data.repo = await res.json();
+    const data: Data = {
+      repo: await res.json(),
+    };
 
     // run checks
     const reportData = checks(data);

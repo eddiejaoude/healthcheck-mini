@@ -1,6 +1,7 @@
+import { Repo } from "@/models/github/repo";
 import { StatusCheck } from "@/types/checks";
 
-export default function url(repo) {
+export default function url(repo: Repo) {
   const response: StatusCheck = {
     title: "Url",
     status: "unknown",
