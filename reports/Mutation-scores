@@ -1,0 +1,29 @@
+File                     |  total | covered | # killed | # timeout | # survived | # no cov | # errors |
+-------------------------|--------|---------|----------|-----------|------------|----------|----------|
+All files                |  83.23 |   88.22 |      397 |         0 |         53 |       27 |        0 |
+ app                     |  21.43 |   21.43 |        3 |         0 |         11 |        0 |        0 |
+  layout.tsx             |  15.38 |   15.38 |        2 |         0 |         11 |        0 |        0 |
+  page.tsx               | 100.00 |  100.00 |        1 |         0 |          0 |        0 |        0 |
+ checks                  |  87.70 |   90.16 |      385 |         0 |         42 |       12 |        0 |
+  activity.js            |  91.18 |   91.18 |       31 |         0 |          3 |        0 |        0 |
+  branches.js            |  95.24 |   95.24 |       40 |         0 |          2 |        0 |        0 |
+  codeOfConduct.js       | 100.00 |  100.00 |       21 |         0 |          0 |        0 |        0 |
+  contributing.js        |  95.24 |   95.24 |       20 |         0 |          1 |        0 |        0 |
+  defaultBranch.js       |  95.00 |   95.00 |       19 |         0 |          1 |        0 |        0 |
+  goodFirstIssue.js      |  85.37 |   85.37 |       35 |         0 |          6 |        0 |        0 |
+  issues.js              |  91.18 |   91.18 |       31 |         0 |          3 |        0 |        0 |
+  issueTemplates.js      |  94.44 |   94.44 |       17 |         0 |          1 |        0 |        0 |
+  labels.js              |  91.18 |   91.18 |       31 |         0 |          3 |        0 |        0 |
+  license.js             | 100.00 |  100.00 |       21 |         0 |          0 |        0 |        0 |
+  projects.js            |  67.65 |   76.67 |       23 |         0 |          7 |        4 |        0 |
+  pullRequestTemplate.js |  95.24 |   95.24 |       20 |         0 |          1 |        0 |        0 |
+  readme.js              |  95.24 |   95.24 |       20 |         0 |          1 |        0 |        0 |
+  release.js             |  75.61 |   83.78 |       31 |         0 |          6 |        4 |        0 |
+  topics.js              |  69.44 |   78.13 |       25 |         0 |          7 |        4 |        0 |
+ components              |  37.50 |  100.00 |        9 |         0 |          0 |       15 |        0 |
+  repo-checker.tsx       |   0.00 |    0.00 |        0 |         0 |          0 |       15 |        0 |
+  report.tsx             | 100.00 |  100.00 |        9 |         0 |          0 |        0 |        0 |
+-------------------------|--------|---------|----------|-----------|------------|----------|----------|
+19:25:11 (44621) INFO HtmlReporter Your report can be found at: file:///Users/sharon/Documents/GitHub/healthcheck-mini/reports/mutation/mutation.html
+19:25:11 (44621) INFO MutationTestExecutor Done in 38 seconds.
+sharon@Sharons-MacBook-Air-2 healthcheck-mini % 
