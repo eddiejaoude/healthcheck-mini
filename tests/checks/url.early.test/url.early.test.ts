@@ -2,7 +2,8 @@
 // Unit tests for: url
 
 
-import url from '@/path/to/url';
+//import url from '@/path/to/url';
+import url from "@/checks/url";
 import { StatusCheck } from "@/types/checks";
 
 

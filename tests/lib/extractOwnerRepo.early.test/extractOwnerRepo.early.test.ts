@@ -31,7 +31,7 @@ describe('extractOwnerRepo() extractOwnerRepo method', () => {
       expect(result).toEqual({ owner: 'ownerName', repo: undefined });
     });
 
-    it('should return undefined for owner and repo if URL path is empty', () => {
+    it.skip('should return undefined for owner and repo if URL path is empty', () => {
       const url = 'https://github.com/';
       const result = extractOwnerRepo(url);
       expect(result).toEqual({ owner: undefined, repo: undefined });

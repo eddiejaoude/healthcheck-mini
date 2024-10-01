@@ -1,0 +1,40 @@
+-------------------------|---------|----------|---------|---------|-------------------
+File                     | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+-------------------------|---------|----------|---------|---------|-------------------
+All files                |   97.43 |    95.87 |     100 |   97.43 |                   
+ app                     |     100 |      100 |     100 |     100 |                   
+  layout.tsx             |     100 |      100 |     100 |     100 |                   
+  page.tsx               |     100 |      100 |     100 |     100 |                   
+ checks                  |   96.53 |    95.55 |     100 |   96.53 |                   
+  activity.js            |     100 |      100 |     100 |     100 |                   
+  branches.js            |     100 |      100 |     100 |     100 |                   
+  codeOfConduct.js       |     100 |      100 |     100 |     100 |                   
+  contributing.js        |     100 |      100 |     100 |     100 |                   
+  defaultBranch.js       |     100 |      100 |     100 |     100 |                   
+  description.ts         |   89.36 |    83.33 |     100 |   89.36 | 22-26             
+  goodFirstIssue.js      |     100 |      100 |     100 |     100 |                   
+  issueTemplates.js      |     100 |      100 |     100 |     100 |                   
+  issues.js              |     100 |      100 |     100 |     100 |                   
+  labels.js              |     100 |      100 |     100 |     100 |                   
+  license.js             |     100 |      100 |     100 |     100 |                   
+  projects.js            |   87.87 |       80 |     100 |   87.87 | 9-12              
+  pullRequestTemplate.js |     100 |      100 |     100 |     100 |                   
+  readme.js              |     100 |      100 |     100 |     100 |                   
+  release.js             |   88.37 |    83.33 |     100 |   88.37 | 17-21             
+  topics.js              |   88.88 |       75 |     100 |   88.88 | 18-21             
+  url.ts                 |     100 |      100 |     100 |     100 |                   
+ components              |     100 |      100 |     100 |     100 |                   
+  report.tsx             |     100 |      100 |     100 |     100 |                   
+ components/ui           |     100 |      100 |     100 |     100 |                   
+  card.tsx               |     100 |      100 |     100 |     100 |                   
+ lib                     |     100 |      100 |     100 |     100 |                   
+  extractOwnerRepo.ts    |     100 |      100 |     100 |     100 |                   
+  utils.ts               |     100 |      100 |     100 |     100 |                   
+-------------------------|---------|----------|---------|---------|-------------------
+
+Test Suites: 22 passed, 22 total
+Tests:       10 skipped, 106 passed, 116 total
+Snapshots:   0 total
+Time:        2.024 s
+Ran all test suites.
+sharon@Sharons-MacBook-Air-2 healthcheck-mini % 
