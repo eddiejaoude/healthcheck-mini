@@ -12,48 +12,31 @@ import {
 } from "@/components/ui/card";
 import Report from "./report";
 import { StatusCheck } from "@/types/checks";
+import extractOwnerRepo from "@/lib/extractOwnerRepo";
+import checks from "@/checks/index";
 
 export function RepoChecker() {
   const [repoUrl, setRepoUrl] = useState("");
   const [statusChecks, setStatusChecks] = useState<StatusCheck[]>([]);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    // get repo data from github
+    const data = { repo: {} };
+    const { owner, repo } = extractOwnerRepo(repoUrl);
+    const res = await fetch(`https://api.github.com/repos/${owner}/${repo}`, {
+      next: { revalidate: 3600 },
+    });
+    data.repo = await res.json();
+
+    // run checks
+    const reportData = checks(data);
+    console.log(reportData);
 
     // In a real application, you would fetch this data from an API
     // Here we're simulating the checks with dummy data
-    setStatusChecks([
-      {
-        name: "README",
-        status: "passed",
-        description: "README.md file is present and detailed.",
-      },
-      {
-        name: "Contributing Guidelines",
-        status: "warning",
-        description: "CONTRIBUTING.md is present but could use more detail.",
-      },
-      {
-        name: "License",
-        status: "passed",
-        description: "LICENSE file is present.",
-      },
-      {
-        name: "Code of Conduct",
-        status: "failed",
-        description: "CODE_OF_CONDUCT.md is missing.",
-      },
-      {
-        name: "Issue Templates",
-        status: "passed",
-        description: "Issue templates are set up.",
-      },
-      {
-        name: "Pull Request Template",
-        status: "warning",
-        description: "PR template could be more comprehensive.",
-      },
-    ]);
+    setStatusChecks(reportData.allChecks);
   };
 
   return (

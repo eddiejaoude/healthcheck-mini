@@ -17,9 +17,9 @@ export default function Report({
 }) {
   const StatusIcon = ({ status }: { status: CheckStatus }) => {
     switch (status) {
-      case "passed":
+      case "success":
         return <CheckCircle2 color="green" />;
-      case "failed":
+      case "error":
         return <XCircle color="red" />;
       case "warning":
         return <AlertCircle color="orange" />;
@@ -38,7 +38,7 @@ export default function Report({
             <li key={index} className="flex items-start space-x-2">
               <StatusIcon status={check.status} />
               <div>
-                <h3 className="font-semibold">{check.name}</h3>
+                <h3 className="font-semibold">{check.title}</h3>
                 <p className="text-sm text-gray-600">{check.description}</p>
               </div>
             </li>

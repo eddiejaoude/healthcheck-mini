@@ -1,7 +1,8 @@
-export type CheckStatus = "passed" | "failed" | "warning";
+export type CheckStatus = "success" | "error" | "warning";
 
 export interface StatusCheck {
-  name: string;
+  title: string;
   status: CheckStatus;
   description: string;
+  extra: string;
 }

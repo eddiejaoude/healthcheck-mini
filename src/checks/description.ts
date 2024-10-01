@@ -1,11 +1,14 @@
+import { StatusCheck } from "@/types/checks";
+
 export default function description(repo) {
   const min = 10;
   const max = 200;
 
-  let response = {
-    id: "description",
-    href: "/repo/status",
+  const response: StatusCheck = {
     title: "Description",
+    status: "success",
+    description: "You have a repo description.",
+    extra: "No action required.",
   };
 
   if (repo.description) {

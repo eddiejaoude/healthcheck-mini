@@ -18,26 +18,26 @@ import url from "./url";
 export default function checks(data) {
   const allChecks = [
     description(data.repo),
-    url(data.repo),
-    topics(data.repo),
-    activity(data.repo),
-    issues(data.repo),
-    defaultBranch(data.repo),
-    goodFirstIssue(data.issues),
-    branches(data.branches),
-    release(data.release),
-    readme(data.communityMetrics),
-    license(data.communityMetrics),
-    contributing(data.communityMetrics),
-    pullRequestTemplate(data.communityMetrics),
-    codeOfConduct(data.communityMetrics),
-    labels(data.labels),
-    projects(data.repo, data.projects),
+    // url(data.repo),
+    // topics(data.repo),
+    // activity(data.repo),
+    // issues(data.repo),
+    // defaultBranch(data.repo),
+    // goodFirstIssue(data.issues),
+    // branches(data.branches),
+    // release(data.release),
+    // readme(data.communityMetrics),
+    // license(data.communityMetrics),
+    // contributing(data.communityMetrics),
+    // pullRequestTemplate(data.communityMetrics),
+    // codeOfConduct(data.communityMetrics),
+    // labels(data.labels),
+    // projects(data.repo, data.projects),
   ];
 
-  const summary = checkSummary(userChecks);
+  const summary = checkSummary(allChecks);
 
-  return { checks: userChecks, summary, allChecks };
+  return { summary, allChecks };
 }
 
 export function checkSummary(checks) {
