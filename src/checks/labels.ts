@@ -1,11 +1,15 @@
-export default function labels(labels) {
-  const min = 3;
-  const max = 6;
+import { Label } from "@/models/github/label";
+import { StatusCheck } from "@/types/checks";
 
-  let response = {
-    id: "labels",
-    href: "/repo/labels",
+export default function labels(labels: Label[]) {
+  const min = 3;
+  const max = 12;
+
+  const response: StatusCheck = {
     title: "Labels",
+    status: "unknown",
+    description: "-",
+    extra: "-",
   };
 
   if (labels.length >= max) {

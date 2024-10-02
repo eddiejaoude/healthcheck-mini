@@ -32,7 +32,7 @@ export default function checks(data: Data): Report {
     contributing(data.community),
     pullRequestTemplate(data.community),
     codeOfConduct(data.community),
-    // labels(data.labels),
+    labels(data.labels),
   ];
 
   const summary = checkSummary(allChecks);
