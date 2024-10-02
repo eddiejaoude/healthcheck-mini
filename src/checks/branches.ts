@@ -1,19 +1,21 @@
-export default function branches(branches) {
+import { Branch } from "@/models/github/branch";
+import { StatusCheck } from "@/types/checks";
+
+export default function branches(branches: Branch[]) {
   const min = 5;
   const max = 10;
 
-  let response = {
-    id: "branches",
-    href: "/repo/status",
+  const response: StatusCheck = {
     title: "Branches",
+    status: "unknown",
+    description: "-",
+    extra: "-",
   };
 
   if (!branches) {
     return {
       ...response,
-      status: "-",
       description: "No data available",
-      extra: "-",
     };
   }
 

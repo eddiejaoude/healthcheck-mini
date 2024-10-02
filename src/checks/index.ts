@@ -26,7 +26,7 @@ export default function checks(data: Data) {
     issues(data.repo),
     defaultBranch(data.repo),
     goodFirstIssue(data.issues),
-    // branches(data.branches),
+    branches(data.branches),
     // release(data.release),
     readme(data.community),
     license(data.community),
