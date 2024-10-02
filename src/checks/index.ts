@@ -29,10 +29,10 @@ export default function checks(data: Data) {
     // branches(data.branches),
     // release(data.release),
     readme(data.community),
-    // license(data.communityMetrics),
-    // contributing(data.communityMetrics),
-    // pullRequestTemplate(data.communityMetrics),
-    // codeOfConduct(data.communityMetrics),
+    license(data.community),
+    contributing(data.community),
+    pullRequestTemplate(data.community),
+    codeOfConduct(data.community),
     // labels(data.labels),
   ];
 

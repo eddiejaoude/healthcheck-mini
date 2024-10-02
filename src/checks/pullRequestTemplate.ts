@@ -1,20 +1,21 @@
-export default function pullRequestTemplate(communityMetrics) {
-  let response = {
-    id: "pull-request-template",
-    href: "/repo/pull-request-template",
+import { Community } from "@/models/github/community";
+import { StatusCheck } from "@/types/checks";
+
+export default function pullRequestTemplate(community: Community) {
+  const response: StatusCheck = {
     title: "Pull Request template",
+    status: "unknown",
+    description: "-",
+    extra: "-",
   };
 
-  if (communityMetrics.files?.pull_request_template) {
+  if (community.files?.pull_request_template) {
     response.status = "success";
     response.description = "You have a Pull Request template.";
     response.extra = "No action required.";
   }
 
-  if (
-    !communityMetrics.files ||
-    !communityMetrics.files.pull_request_template
-  ) {
+  if (!community.files || !community.files.pull_request_template) {
     response.status = "error";
     response.description =
       "You do not have a pull request template in your repo.";
