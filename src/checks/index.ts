@@ -28,7 +28,7 @@ export default function checks(data: Data) {
     goodFirstIssue(data.issues),
     // branches(data.branches),
     // release(data.release),
-    // readme(data.communityMetrics),
+    readme(data.community),
     // license(data.communityMetrics),
     // contributing(data.communityMetrics),
     // pullRequestTemplate(data.communityMetrics),
