@@ -1,0 +1,40 @@
+{
+  "health_percentage": 100,
+  "description": "Checks how friendly your Open Source project is and suggests improvements! Sponsored by @Flagsmith",
+  "documentation": "https://healthcheck.eddiehubcommunity.org",
+  "files": {
+    "code_of_conduct": {
+      "key": "contributor_covenant",
+      "name": "Contributor Covenant",
+      "html_url": "https://github.com/EddieHubCommunity/.github/blob/main/CODE_OF_CONDUCT.md",
+      "url": "https://api.github.com/repos/EddieHubCommunity/HealthCheck/community/code_of_conduct"
+    },
+    "code_of_conduct_file": {
+      "url": "https://api.github.com/repos/EddieHubCommunity/.github/contents/CODE_OF_CONDUCT.md",
+      "html_url": "https://github.com/EddieHubCommunity/.github/blob/main/CODE_OF_CONDUCT.md"
+    },
+    "contributing": {
+      "url": "https://api.github.com/repos/EddieHubCommunity/HealthCheck/contents/CONTRIBUTING.md",
+      "html_url": "https://github.com/EddieHubCommunity/HealthCheck/blob/main/CONTRIBUTING.md"
+    },
+    "issue_template": null,
+    "pull_request_template": {
+      "url": "https://api.github.com/repos/EddieHubCommunity/.github/contents/.github/PULL_REQUEST_TEMPLATE.md",
+      "html_url": "https://github.com/EddieHubCommunity/.github/blob/main/.github/PULL_REQUEST_TEMPLATE.md"
+    },
+    "license": {
+      "key": "mit",
+      "name": "MIT License",
+      "spdx_id": "MIT",
+      "url": "https://api.github.com/licenses/mit",
+      "node_id": "MDc6TGljZW5zZTEz",
+      "html_url": "https://github.com/EddieHubCommunity/HealthCheck/blob/main/LICENSE"
+    },
+    "readme": {
+      "url": "https://api.github.com/repos/EddieHubCommunity/HealthCheck/contents/README.md",
+      "html_url": "https://github.com/EddieHubCommunity/HealthCheck/blob/main/README.md"
+    }
+  },
+  "updated_at": "2024-09-09T12:36:08Z",
+  "content_reports_enabled": true
+}

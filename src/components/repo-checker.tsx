@@ -23,12 +23,25 @@ export function RepoChecker() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    // get repo data from github
-    const data: Data = await getAllApi(repoUrl);
+    let data: Data;
+    let reportData: ReportType;
+    try {
+      // get repo data from github
+      data = await getAllApi(repoUrl);
 
-    // run checks
-    const reportData = checks(data);
-    console.log(reportData);
+      // run checks
+      reportData = checks(data);
+    } catch {
+      reportData = {
+        allChecks: [],
+        score: 0,
+        summary: {
+          success: 0,
+          warning: 0,
+          error: 0,
+        },
+      };
+    }
 
     // In a real application, you would fetch this data from an API
     // Here we're simulating the checks with dummy data

@@ -1,0 +1,110 @@
+[
+  {
+    "id": 7173840292,
+    "node_id": "LA_kwDOMTFtqM8AAAABq5gdpA",
+    "url": "https://api.github.com/repos/EddieHubCommunity/HealthCheck/labels/bug",
+    "name": "bug",
+    "color": "d73a4a",
+    "default": true,
+    "description": "Something isn't working"
+  },
+  {
+    "id": 7388290264,
+    "node_id": "LA_kwDOMTFtqM8AAAABuGBc2A",
+    "url": "https://api.github.com/repos/EddieHubCommunity/HealthCheck/labels/dependencies",
+    "name": "dependencies",
+    "color": "0366d6",
+    "default": false,
+    "description": "Pull requests that update a dependency file"
+  },
+  {
+    "id": 7173840298,
+    "node_id": "LA_kwDOMTFtqM8AAAABq5gdqg",
+    "url": "https://api.github.com/repos/EddieHubCommunity/HealthCheck/labels/documentation",
+    "name": "documentation",
+    "color": "0075ca",
+    "default": true,
+    "description": "Improvements or additions to documentation"
+  },
+  {
+    "id": 7173840302,
+    "node_id": "LA_kwDOMTFtqM8AAAABq5gdrg",
+    "url": "https://api.github.com/repos/EddieHubCommunity/HealthCheck/labels/duplicate",
+    "name": "duplicate",
+    "color": "cfd3d7",
+    "default": true,
+    "description": "This issue or pull request already exists"
+  },
+  {
+    "id": 7173840306,
+    "node_id": "LA_kwDOMTFtqM8AAAABq5gdsg",
+    "url": "https://api.github.com/repos/EddieHubCommunity/HealthCheck/labels/enhancement",
+    "name": "enhancement",
+    "color": "a2eeef",
+    "default": true,
+    "description": "New feature or request"
+  },
+  {
+    "id": 7173840310,
+    "node_id": "LA_kwDOMTFtqM8AAAABq5gdtg",
+    "url": "https://api.github.com/repos/EddieHubCommunity/HealthCheck/labels/good%20first%20issue",
+    "name": "good first issue",
+    "color": "7057ff",
+    "default": true,
+    "description": "Good for newcomers"
+  },
+  {
+    "id": 7173840314,
+    "node_id": "LA_kwDOMTFtqM8AAAABq5gdug",
+    "url": "https://api.github.com/repos/EddieHubCommunity/HealthCheck/labels/help%20wanted",
+    "name": "help wanted",
+    "color": "C2E0C6",
+    "default": true,
+    "description": "Extra attention is needed"
+  },
+  {
+    "id": 7173840318,
+    "node_id": "LA_kwDOMTFtqM8AAAABq5gdvg",
+    "url": "https://api.github.com/repos/EddieHubCommunity/HealthCheck/labels/invalid",
+    "name": "invalid",
+    "color": "e4e669",
+    "default": true,
+    "description": "This doesn't seem right"
+  },
+  {
+    "id": 7173840321,
+    "node_id": "LA_kwDOMTFtqM8AAAABq5gdwQ",
+    "url": "https://api.github.com/repos/EddieHubCommunity/HealthCheck/labels/question",
+    "name": "question",
+    "color": "d876e3",
+    "default": true,
+    "description": "Further information is requested"
+  },
+  {
+    "id": 7257971542,
+    "node_id": "LA_kwDOMTFtqM8AAAABsJvbVg",
+    "url": "https://api.github.com/repos/EddieHubCommunity/HealthCheck/labels/status:%20awaiting%20triage",
+    "name": "status: awaiting triage",
+    "color": "D93F0B",
+    "default": false,
+    "description": "this issue is not ready for dev"
+  },
+  {
+    "id": 7257970210,
+    "node_id": "LA_kwDOMTFtqM8AAAABsJvWIg",
+    "url": "https://api.github.com/repos/EddieHubCommunity/HealthCheck/labels/status:%20ready%20for%20dev",
+    "name": "status: ready for dev",
+    "color": "0E8A16",
+    "default": false,
+    "description": "this issue can be assigned and worked on"
+  },
+  {
+    "id": 7173840325,
+    "node_id": "LA_kwDOMTFtqM8AAAABq5gdxQ",
+    "url": "https://api.github.com/repos/EddieHubCommunity/HealthCheck/labels/wontfix",
+    "name": "wontfix",
+    "color": "ffffff",
+    "default": true,
+    "description": "This will not be worked on"
+  }
+]
