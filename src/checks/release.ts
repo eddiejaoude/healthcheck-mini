@@ -1,16 +1,19 @@
+import { Release } from "@/models/github/release";
+import { StatusCheck } from "@/types/checks";
 import { differenceInDays } from "date-fns";
 
-export default function release(release) {
+export default function release(release: Release) {
   const min = 30; // days
   const max = 90; // days
   const now = new Date();
   const last = new Date(release.created_at);
   const diff = differenceInDays(now, last);
 
-  let response = {
-    id: "release",
-    href: "/repo/status",
+  const response: StatusCheck = {
     title: "Release",
+    status: "unknown",
+    description: "-",
+    extra: "-",
   };
 
   if (!release.created_at) {

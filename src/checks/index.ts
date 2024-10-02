@@ -9,7 +9,6 @@ import goodFirstIssue from "./goodFirstIssue";
 import issues from "./issues";
 import labels from "./labels";
 import license from "./license";
-import projects from "./projects";
 import pullRequestTemplate from "./pullRequestTemplate";
 import readme from "./readme";
 import release from "./release";
@@ -27,7 +26,7 @@ export default function checks(data: Data): Report {
     defaultBranch(data.repo),
     goodFirstIssue(data.issues),
     branches(data.branches),
-    // release(data.release),
+    release(data.release),
     readme(data.community),
     license(data.community),
     contributing(data.community),

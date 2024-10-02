@@ -3,6 +3,7 @@ import getRepoApi from "./getRepoApi";
 import getIssuesApi from "./getIssuesApi";
 import getCommunityApi from "./getCommunityApi";
 import getBranchesApi from "./getBranchesApi";
+import getReleaseApi from "./getReleaseApi";
 
 export default async function getAllApi(repoUrl: string): Promise<Data> {
   const calls = await Promise.all([
@@ -10,6 +11,7 @@ export default async function getAllApi(repoUrl: string): Promise<Data> {
     getIssuesApi(repoUrl),
     getCommunityApi(repoUrl),
     getBranchesApi(repoUrl),
+    getReleaseApi(repoUrl),
   ]);
 
   const data: Data = {
@@ -17,6 +19,7 @@ export default async function getAllApi(repoUrl: string): Promise<Data> {
     issues: calls[1],
     community: calls[2],
     branches: calls[3],
+    release: calls[4],
   };
 
   return data;

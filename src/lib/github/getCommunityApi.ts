@@ -1,4 +1,3 @@
-import { Issue } from "@/models/github/issue";
 import extractOwnerRepo from "./extractOwnerRepo";
 import { Community } from "@/models/github/community";
 
