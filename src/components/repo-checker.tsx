@@ -11,14 +11,14 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import Report from "./report";
-import { StatusCheck } from "@/types/checks";
+import { Report as ReportType } from "@/types/checks";
 import checks from "@/checks/index";
 import getAllApi from "@/lib/github/getAllApi";
 import Data from "@/models/data";
 
 export function RepoChecker() {
   const [repoUrl, setRepoUrl] = useState("");
-  const [statusChecks, setStatusChecks] = useState<StatusCheck[]>([]);
+  const [statusChecks, setStatusChecks] = useState<ReportType>();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -32,7 +32,7 @@ export function RepoChecker() {
 
     // In a real application, you would fetch this data from an API
     // Here we're simulating the checks with dummy data
-    setStatusChecks(reportData.allChecks);
+    setStatusChecks(reportData);
   };
 
   return (
@@ -61,7 +61,7 @@ export function RepoChecker() {
         </CardContent>
       </Card>
 
-      {statusChecks.length > 0 && (
+      {statusChecks && statusChecks.allChecks?.length > 0 && (
         <Report repoUrl={repoUrl} statusChecks={statusChecks} />
       )}
     </div>

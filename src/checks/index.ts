@@ -1,4 +1,4 @@
-import { StatusCheck } from "@/types/checks";
+import { Report, StatusCheck } from "@/types/checks";
 import activity from "./activity";
 import branches from "./branches";
 import codeOfConduct from "./codeOfConduct";
@@ -17,7 +17,7 @@ import topics from "./topics";
 import url from "./url";
 import Data from "@/models/data";
 
-export default function checks(data: Data) {
+export default function checks(data: Data): Report {
   const allChecks: StatusCheck[] = [
     description(data.repo),
     url(data.repo),
@@ -37,10 +37,17 @@ export default function checks(data: Data) {
   ];
 
   const summary = checkSummary(allChecks);
+  const score = Math.round((summary.success / allChecks.length) * 100);
 
-  return { summary, allChecks };
+  return { summary, allChecks, score };
 }
 
 export function checkSummary(checks: StatusCheck[]) {
-  return Object.groupBy(checks, ({ status }) => status);
+  const groups = Object.groupBy(checks, ({ status }) => status);
+
+  return {
+    success: groups.success?.length || 0,
+    warning: groups.warning?.length || 0,
+    error: groups.error?.length || 0,
+  };
 }
