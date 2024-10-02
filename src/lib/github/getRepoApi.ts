@@ -1,4 +1,4 @@
-import Data from "@/models/data";
+import { Repo } from "@/models/github/repo";
 import extractOwnerRepo from "./extractOwnerRepo";
 
 export default async function getRepoApi(repoUrl: string) {
@@ -6,9 +6,8 @@ export default async function getRepoApi(repoUrl: string) {
   const res = await fetch(`https://api.github.com/repos/${owner}/${repo}`, {
     next: { revalidate: 3600 },
   });
-  const data: Data = {
-    repo: await res.json(),
-  };
+
+  const data: Repo = await res.json();
 
   return data;
 }

@@ -13,7 +13,8 @@ import {
 import Report from "./report";
 import { StatusCheck } from "@/types/checks";
 import checks from "@/checks/index";
-import getRepoApi from "@/lib/github/getRepoApi";
+import getAllApi from "@/lib/github/getAllApi";
+import Data from "@/models/data";
 
 export function RepoChecker() {
   const [repoUrl, setRepoUrl] = useState("");
@@ -23,7 +24,7 @@ export function RepoChecker() {
     e.preventDefault();
 
     // get repo data from github
-    const data = await getRepoApi(repoUrl);
+    const data: Data = await getAllApi(repoUrl);
 
     // run checks
     const reportData = checks(data);
