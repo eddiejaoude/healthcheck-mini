@@ -1,11 +1,15 @@
-export default function topics(repo) {
+import { Repo } from "@/models/github/repo";
+import { StatusCheck } from "@/types/checks";
+
+export default function topics(repo: Repo) {
   const min = 6;
   const max = 12;
 
-  let response = {
-    id: "topics",
-    href: "/repo/status",
-    title: "Topic",
+  const response: StatusCheck = {
+    title: "Topics",
+    status: "unknown",
+    description: "-",
+    extra: "-",
   };
 
   if (repo.topics.length > 0) {
@@ -14,7 +18,7 @@ export default function topics(repo) {
     response.extra = "No action required.";
   }
 
-  if (repo.topics === 0) {
+  if (repo.topics.length === 0) {
     response.status = "error";
     response.description = "There are no repo topics at the top right.";
     response.extra = "It is important to be discoverable using topics.";

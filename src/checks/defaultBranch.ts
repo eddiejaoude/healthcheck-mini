@@ -1,10 +1,14 @@
-export default function defaultBranch(repo) {
+import { Repo } from "@/models/github/repo";
+import { StatusCheck } from "@/types/checks";
+
+export default function defaultBranch(repo: Repo) {
   const defaultBranchName = "main";
 
-  let response = {
-    id: "default-branch",
-    href: "/repo/status",
+  const response: StatusCheck = {
     title: "Default Branch",
+    status: "unknown",
+    description: "-",
+    extra: "-",
   };
 
   if (repo.default_branch === defaultBranchName) {

@@ -1,11 +1,15 @@
-export default function issues(repo) {
+import { Repo } from "@/models/github/repo";
+import { StatusCheck } from "@/types/checks";
+
+export default function issues(repo: Repo) {
   const min = 5;
   const max = 20;
 
-  let response = {
-    id: "issues",
-    href: "/repo/status",
+  const response: StatusCheck = {
     title: "Issue",
+    status: "unknown",
+    description: "-",
+    extra: "-",
   };
 
   if (repo.open_issues > max) {

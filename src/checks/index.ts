@@ -18,13 +18,13 @@ import url from "./url";
 import Data from "@/models/data";
 
 export default function checks(data: Data) {
-  const allChecks = [
+  const allChecks: StatusCheck[] = [
     description(data.repo),
     url(data.repo),
-    // topics(data.repo),
-    // activity(data.repo),
-    // issues(data.repo),
-    // defaultBranch(data.repo),
+    topics(data.repo),
+    activity(data.repo),
+    issues(data.repo),
+    defaultBranch(data.repo),
     // goodFirstIssue(data.issues),
     // branches(data.branches),
     // release(data.release),

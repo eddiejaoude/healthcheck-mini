@@ -1,16 +1,19 @@
+import { Repo } from "@/models/github/repo";
+import { StatusCheck } from "@/types/checks";
 import { differenceInDays } from "date-fns";
 
-export default function activity(repo) {
+export default function activity(repo: Repo) {
   const min = 7; // days
   const max = 30; // days
   const now = new Date();
   const last = new Date(repo.pushed_at);
   const diff = differenceInDays(now, last);
 
-  let response = {
-    id: "activity",
-    href: "/repo/status",
+  const response: StatusCheck = {
     title: "Activity",
+    status: "unknown",
+    description: "-",
+    extra: "-",
   };
 
   if (diff <= min) {
