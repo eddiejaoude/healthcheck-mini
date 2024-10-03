@@ -12,17 +12,19 @@ export default function description(repo: Repo) {
     extra: "-",
   };
 
-  if (repo.description) {
-    response.status = "success";
-    response.description = "You have a repo description.";
-    response.extra = "No action required.";
-  }
-
   if (!repo.description) {
     response.status = "error";
     response.description = "There is no repo description at the top right.";
     response.extra =
       "It is important to write a concise description about your repo.";
+
+    return response;
+  }
+
+  if (repo.description) {
+    response.status = "success";
+    response.description = "You have a repo description.";
+    response.extra = "No action required.";
   }
 
   if (repo.description?.length < min) {

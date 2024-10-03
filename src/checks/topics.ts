@@ -24,7 +24,7 @@ export default function topics(repo: Repo) {
     response.extra = "It is important to be discoverable using topics.";
   }
 
-  if (repo.topics.length < min) {
+  if (repo.topics.length > 0 && repo.topics.length < min) {
     response.status = "warning";
     response.description = "You should add some more topics.";
     response.extra = "Try to include more topics.";
