@@ -5,7 +5,7 @@ import checks from "@/checks/index";
 import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import { RepoChecker } from "@/components/repo-checker";
-import getAllApi from "@/lib/github/getAllApi";
+import { getAllApi } from "@/lib/github/getAllApi";
 import mockRepo from "../../mocks/repo.json";
 import { Convert } from "@/models/github/repo";
 import { Report } from "@/types/checks";

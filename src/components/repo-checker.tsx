@@ -13,7 +13,7 @@ import {
 import Report from "./report";
 import { Report as ReportType } from "@/types/checks";
 import checks from "@/checks/index";
-import getAllApi from "@/lib/github/getAllApi";
+import { getAllApi } from "@/lib/github/getAllApi";
 import Data from "@/models/data";
 import { Alert, AlertDescription, AlertTitle } from "./ui/alert";
 import { AlertTriangle } from "lucide-react";
