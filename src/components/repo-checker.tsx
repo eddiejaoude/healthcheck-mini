@@ -15,9 +15,12 @@ import { Report as ReportType } from "@/types/checks";
 import checks from "@/checks/index";
 import getAllApi from "@/lib/github/getAllApi";
 import Data from "@/models/data";
+import { Alert, AlertDescription, AlertTitle } from "./ui/alert";
+import { AlertTriangle } from "lucide-react";
 
 export function RepoChecker() {
   const [repoUrl, setRepoUrl] = useState("");
+  const [error, setError] = useState("");
   const [statusChecks, setStatusChecks] = useState<ReportType>();
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -31,6 +34,7 @@ export function RepoChecker() {
 
       // run checks
       reportData = checks(data);
+      setError("");
     } catch {
       reportData = {
         allChecks: [],
@@ -41,6 +45,7 @@ export function RepoChecker() {
           error: 0,
         },
       };
+      setError("GitHub repo data error");
     }
 
     // In a real application, you would fetch this data from an API
@@ -73,6 +78,14 @@ export function RepoChecker() {
           </form>
         </CardContent>
       </Card>
+
+      {error && (
+        <Alert variant="destructive" className="mt-4">
+          <AlertTriangle className="h-4 w-4" />
+          <AlertTitle>Error</AlertTitle>
+          <AlertDescription>{error}</AlertDescription>
+        </Alert>
+      )}
 
       {statusChecks && statusChecks.allChecks?.length > 0 && (
         <Report repoUrl={repoUrl} statusChecks={statusChecks} />
