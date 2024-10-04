@@ -1,19 +1,29 @@
 import Data from "@/models/data";
-import getRepoApi from "./getRepoApi";
-import getIssuesApi from "./getIssuesApi";
-import getCommunityApi from "./getCommunityApi";
-import getBranchesApi from "./getBranchesApi";
-import getReleaseApi from "./getReleaseApi";
-import getLabelsApi from "./getLabelsApi";
+import extractOwnerRepo from "./extractOwnerRepo";
+import { Repo } from "@/models/github/repo";
+import { Issue } from "@/models/github/issue";
+import { Community } from "@/models/github/community";
+import { Branch } from "@/models/github/branch";
+import { Release } from "@/models/github/release";
+import { Label } from "@/models/github/label";
+import { apiRequest } from "./apiRequest";
 
 export default async function getAllApi(repoUrl: string): Promise<Data> {
+  const { owner, repo } = extractOwnerRepo(repoUrl);
+
   const calls = await Promise.all([
-    getRepoApi(repoUrl),
-    getIssuesApi(repoUrl),
-    getCommunityApi(repoUrl),
-    getBranchesApi(repoUrl),
-    getReleaseApi(repoUrl),
-    getLabelsApi(repoUrl),
+    apiRequest<Repo>(`https://api.github.com/repos/${owner}/${repo}`),
+    apiRequest<Issue[]>(`https://api.github.com/repos/${owner}/${repo}/issues`),
+    apiRequest<Community>(
+      `https://api.github.com/repos/${owner}/${repo}/community/profile`
+    ),
+    apiRequest<Branch[]>(
+      `https://api.github.com/repos/${owner}/${repo}/branches`
+    ),
+    apiRequest<Release>(
+      `https://api.github.com/repos/${owner}/${repo}/releases/latest`
+    ),
+    apiRequest<Label[]>(`https://api.github.com/repos/${owner}/${repo}/labels`),
   ]);
 
   const data: Data = {
